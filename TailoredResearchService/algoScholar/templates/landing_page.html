@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            font-size: 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+        }
+        .chat-container {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            overflow-y: auto;
+            flex-grow: 1;
+            width: calc(100% - 0px);
+            box-sizing: border-box;
+            max-height: 70vh;
+        }
+        .user-message {
+            text-align: right;
+            width: fit-content;
+            background-color: #007bff;
+            border-radius: 5px;
+            border: 1px solid #007bff;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            margin-left: auto;
+        }
+        .bot-message {
+            justify-self: start;
+            width: fit-content;
+            background-color: #4B5563;
+            border-radius: 5px;
+            border: 1px solid #4B5563;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.5rem;
+            color: #F3F4F6;
+        }
+        #msg {
+            padding: 0.5rem;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        #sendBtn {
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        #chatForm {
+            display: flex;
+            align-items: stretch;
+        }
+        h2 {
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Chatbot</h2>
+        <div class="chat-container" id="chatContainer">
+            <div class="user-message">Hello!</div>
+            <div class="bot-message">Hi there! How can I assist you today?</div>
+        </div>
+        <form id="chatForm">
+            <input type="text" id="msg" placeholder="Type your message..." style="box-sizing: border-box;">
+            <button type="submit" id="sendBtn">Send</button>
+        </form>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var message = document.getElementById('msg').value;
+            var chatContainer = document.getElementById('chatContainer');
+            var userMessage = document.createElement('div');
+            userMessage.classList.add('user-message');
+            userMessage.textContent = message;
+            chatContainer.appendChild(userMessage);
+            var botMessage = document.createElement('div');
+            botMessage.classList.add('bot-message');
+            botMessage.textContent = 'Sorry, I am just a demo bot and cannot respond. Please integrate a real AI system for responses.';
+            chatContainer.appendChild(botMessage);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            document.getElementById('msg').value = '';
+            return false;
+        }
+        document.getElementById('chatForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            sendMessage();
+        });
+        window.addEventListener('resize', function() {
+            var chatContainerWidth = document.getElementById('chatContainer').offsetWidth;
+            var msgInputWidth = chatContainerWidth - document.getElementById('sendBtn').offsetWidth - 20;
+            document.getElementById('msg').style.width = msgInputWidth + 'px';
+        });
+        window.dispatchEvent(new Event('resize'));
+    </script>
+</body>
+</html>
+{% endblock %}
