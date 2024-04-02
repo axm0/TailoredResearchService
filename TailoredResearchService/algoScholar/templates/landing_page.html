@@ -99,7 +99,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
-        // Function to send a message and record the button click
         function sendMessage() {
             var message = document.getElementById('msg').value;
             var chatContainer = document.getElementById('chatContainer');
@@ -107,29 +106,34 @@
             userMessage.classList.add('user-message');
             userMessage.textContent = message;
             chatContainer.appendChild(userMessage);
-            var botMessage = document.createElement('div');
-            botMessage.classList.add('bot-message');
-            botMessage.textContent = 'Sorry, I am just a demo bot and cannot respond. Please integrate a real AI system for responses.';
-            chatContainer.appendChild(botMessage);
-            chatContainer.scrollTop = chatContainer.scrollHeight;
             document.getElementById('msg').value = '';
-    
-            // Mocking the AJAX request without actually sending it
-            console.log('Mock AJAX request sent:', message);
+
+            // Send AJAX request to record the message
+            $.ajax({
+                url: '/record_click/',  // URL mapped to the Django view
+                method: 'POST',
+                data: {
+                    'message': message,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'  // Include the CSRF token
+                },
+                success: function(response) {
+                    console.log('Message sent successfully:', response.message);
+                    // You can handle the success response here
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error sending message:', error);
+                    // You can handle the error response here
+                }
+            });
+
             return false;
         }
-    
+
         $(document).ready(function() {
             $('#chatForm').on('submit', function(event) {
                 event.preventDefault();
                 sendMessage();
             });
-    
-            $(window).on('resize', function() {
-                var chatContainerWidth = $('#chatContainer').outerWidth();
-                var msgInputWidth = chatContainerWidth - $('#sendBtn').outerWidth() - 20;
-                $('#msg').css('width', msgInputWidth + 'px');
-            }).resize();
         });
     </script>
 </body>

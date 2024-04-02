@@ -8,7 +8,6 @@ def landing_page(request):
 def record_click(request):
     if request.method == 'POST':
         message = request.POST.get('message')
-        Chat.objects.create(message=message)
-        return JsonResponse({'status': 'success'})
+        return JsonResponse({'status': 'success', 'message': message})
     else:
-        return JsonResponse({'status': 'error'})
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=400)
