@@ -90,12 +90,16 @@
             <div class="bot-message">Hi there! How can I assist you today?</div>
         </div>
         <form id="chatForm">
+            {% csrf_token %}
             <input type="text" id="msg" placeholder="Type your message..." style="box-sizing: border-box;">
             <button type="submit" id="sendBtn">Send</button>
         </form>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script>
+        // Function to send a message and record the button click
         function sendMessage() {
             var message = document.getElementById('msg').value;
             var chatContainer = document.getElementById('chatContainer');
@@ -109,18 +113,24 @@
             chatContainer.appendChild(botMessage);
             chatContainer.scrollTop = chatContainer.scrollHeight;
             document.getElementById('msg').value = '';
+    
+            // Mocking the AJAX request without actually sending it
+            console.log('Mock AJAX request sent:', message);
             return false;
         }
-        document.getElementById('chatForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            sendMessage();
+    
+        $(document).ready(function() {
+            $('#chatForm').on('submit', function(event) {
+                event.preventDefault();
+                sendMessage();
+            });
+    
+            $(window).on('resize', function() {
+                var chatContainerWidth = $('#chatContainer').outerWidth();
+                var msgInputWidth = chatContainerWidth - $('#sendBtn').outerWidth() - 20;
+                $('#msg').css('width', msgInputWidth + 'px');
+            }).resize();
         });
-        window.addEventListener('resize', function() {
-            var chatContainerWidth = document.getElementById('chatContainer').offsetWidth;
-            var msgInputWidth = chatContainerWidth - document.getElementById('sendBtn').offsetWidth - 20;
-            document.getElementById('msg').style.width = msgInputWidth + 'px';
-        });
-        window.dispatchEvent(new Event('resize'));
     </script>
 </body>
 </html>
