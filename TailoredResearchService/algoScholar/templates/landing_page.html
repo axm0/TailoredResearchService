@@ -108,21 +108,20 @@
             chatContainer.appendChild(userMessage);
             document.getElementById('msg').value = '';
 
-            // Send AJAX request to record the message
+            // Send AJAX request
             $.ajax({
-                url: '/record_click/',  // URL mapped to the Django view
+                url: '/record_click/',
                 method: 'POST',
                 data: {
                     'message': message,
-                    'csrfmiddlewaretoken': '{{ csrf_token }}'  // Include the CSRF token
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
                 },
                 success: function(response) {
                     console.log('Message sent successfully:', response.message);
-                    // You can handle the success response here
                 },
                 error: function(xhr, status, error) {
                     console.error('Error sending message:', error);
-                    // You can handle the error response here
+
                 }
             });
 
