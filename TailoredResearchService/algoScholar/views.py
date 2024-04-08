@@ -3,35 +3,45 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 
-# Simplified for demonstration; actual storage might require database or session management.
-chat_sessions = {}
+chat_sessions = {
+    'Session 1': [
+        {'sender': 'user', 'message': 'Hello!'},
+        {'sender': 'bot', 'message': 'Hi there! How can I assist you today?'},
+    ],
+    'Session 2': [
+        {'sender': 'user', 'message': 'What is the capital of France?'},
+        {'sender': 'bot', 'message': 'The capital of France is Paris.'},
+    ],
+    'Session 3': [],
+}
 
 @csrf_exempt
 @require_http_methods(["POST"])
 def record_click(request):
-    # This endpoint simulates recording a click or a chat message.
-    # Adjust the logic as per your application's requirements.
     message = request.POST.get('message', '')
-    session_id = request.POST.get('session_id', '')
-    # Simulated response for demonstration purposes.
-    return JsonResponse({'sender': 'bot', 'message': f'Response to "{message}" in session {session_id}'})
+    session_id = request.POST.get('session_id', 'Session 1')
+    chat_sessions[session_id].append({'sender': 'user', 'message': message})
+    bot_response = {'sender': 'bot', 'message': 'Received message: {}'.format(message)}
+    chat_sessions[session_id].append(bot_response)
+    return JsonResponse(bot_response)
 
-@require_http_methods(["GET"])
 def get_chat_session(request):
-    # This endpoint should return chat history for a given session.
-    # Here, we're just returning a simulated chat history.
-    session_id = request.GET.get('session_id', '')
-    return JsonResponse({'chat_history': [{'sender': 'user', 'message': 'Hello!'}, {'sender': 'bot', 'message': 'Hi there! How can I assist you today?'}]})
+    session_id = request.GET.get('session_id', 'Session 1')
+    chat_history = chat_sessions.get(session_id, [])
+    return JsonResponse({'chat_history': chat_history})
 
-@csrf_exempt
-@require_http_methods(["POST"])
 def create_chat_session(request):
-    # This endpoint simulates creating a new chat session.
-    # In a real application, you'd likely create a session in the database or another storage.
-    return JsonResponse({'status': 'success', 'message': 'New chat session created', 'sessionId': 'unique_session_id'})
+    new_session_id = f"Session {len(chat_sessions) + 1}"
+    chat_sessions[new_session_id] = []
+    return JsonResponse({'status': 'success', 'message': f'{new_session_id} created', 'sessionId': new_session_id})
 
 def landing_page(request):
-    # The landing page view simply renders the initial template without needing to pass session data,
-    # as session management is handled client-side with JavaScript.
-    return render(request, 'landing_page.html', {})
+    session_list = []
+    for session in chat_sessions.keys():
+        if '|' in session:
+            name, session_id = session.split('|')
+            session_list.append({'name': name, 'id': session_id})
+        else:
+            session_list.append({'name': session, 'id': 'default_id'})
 
+    return render(request, 'landing_page.html', {'session_list': session_list})
