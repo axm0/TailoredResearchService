@@ -56,6 +56,20 @@ body {
 .chat-sessions li span {
     margin-left: 0.5rem;
 }
+.chat-sessions li .session-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.chat-sessions li .session-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+.chat-sessions li .delete-chat-btn, .chat-sessions li .rename-chat-btn {
+    
+}
 .chat-sessions li .session-name {
     white-space: nowrap;
     overflow: hidden;

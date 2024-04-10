@@ -46,9 +46,7 @@ function initChatSessions() {
     } else {
         var defaultSessionId = generateUniqueSessionId();
         var defaultSessionElement = $('<li>').data('session-id', defaultSessionId).addClass('active-session')
-            .append($('<span class="session-name">').text('New Chat'))
-            .append($('<span class="delete-chat-btn">🗑️</span>'))
-            .append($('<span class="rename-chat-btn">✏️</span>'));
+            .append($('<div class="session-item">').append($('<span class="session-name">').text('New Chat')).append($('<span class="session-actions">').append($('<span class="delete-chat-btn">🗑️</span><span class="rename-chat-btn">✏️</span>'))));
         $('.chat-sessions').append(defaultSessionElement);
         setCookie('chatSessions', 'New Chat|' + defaultSessionId, 7);
         setCookie('lastActiveSession', 'New Chat', 7);
@@ -121,9 +119,7 @@ function sendMessage() {
 function createChatSession() {
     var newSessionId = generateUniqueSessionId();
     var newSessionElement = $('<li>').data('session-id', newSessionId)
-        .append($('<span class="session-name">').text('New Chat'))
-        .append($('<span class="delete-chat-btn">🗑️</span>'))
-        .append($('<span class="rename-chat-btn">✏️</span>'));
+        .append($('<div class="session-item">').append($('<span class="session-name">').text('New Chat')).append($('<span class="session-actions">').append($('<span class="delete-chat-btn">🗑️</span><span class="rename-chat-btn">✏️</span>'))));
     $('.chat-sessions').append(newSessionElement);
 
     var existingSessions = getCookie('chatSessions');
@@ -177,7 +173,8 @@ function deleteChatSession(sessionId) {
 
     if (updatedSessions.length === 0) {
         var defaultSessionId = generateUniqueSessionId();
-        var defaultSessionElement = $('<li>').text('New Chat').data('session-id', defaultSessionId).addClass('active-session').append($('<span class="delete-chat-btn">🗑️</span>')).append($('<span class="rename-chat-btn">✏️</span>'));
+        var defaultSessionElement = $('<li>').data('session-id', defaultSessionId).addClass('active-session')
+            .append($('<div class="session-item">').append($('<span class="session-name">').text('New Chat')).append($('<span class="session-actions">').append($('<span class="delete-chat-btn">🗑️</span><span class="rename-chat-btn">✏️</span>'))));
         $('.chat-sessions').empty().append(defaultSessionElement);
         setCookie('chatSessions', 'New Chat|' + defaultSessionId, 7);
         setCookie('lastActiveSession', 'New Chat', 7);

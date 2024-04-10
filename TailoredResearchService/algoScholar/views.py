@@ -3,23 +3,15 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 
-chat_sessions = {
-    'Session 1': [
-        {'sender': 'user', 'message': 'Hello!'},
-        {'sender': 'bot', 'message': 'Hi there! How can I assist you today?'},
-    ],
-    'Session 2': [
-        {'sender': 'user', 'message': 'What is the capital of France?'},
-        {'sender': 'bot', 'message': 'The capital of France is Paris.'},
-    ],
-    'Session 3': [],
-}
+chat_sessions = {}
 
 @csrf_exempt
 @require_http_methods(["POST"])
 def record_click(request):
     message = request.POST.get('message', '')
-    session_id = request.POST.get('session_id', 'Session 1')
+    session_id = request.POST.get('session_id', '')
+    if session_id not in chat_sessions:
+        chat_sessions[session_id] = []
     chat_sessions[session_id].append({'sender': 'user', 'message': message})
     bot_response = {'sender': 'bot', 'message': 'Received message: {}'.format(message)}
     chat_sessions[session_id].append(bot_response)
