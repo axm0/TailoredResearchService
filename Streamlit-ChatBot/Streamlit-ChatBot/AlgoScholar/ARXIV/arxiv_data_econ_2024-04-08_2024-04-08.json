@@ -1,0 +1,234 @@
+[
+    {
+        "id": "2102.00618",
+        "title": "monotone additive statistics",
+        "abstract": "the expectation is an example of a descriptive statistic that is monotone with respect to stochastic dominance, and additive for sums of independent random variables. we provide a complete characterization of such statistics, and explore a number of applications to models of individual and group decision-making. these include a representation of stationary monotone time preferences, extending the work of fishburn and rubinstein (1982) to time lotteries. this extension offers a new perspective on risk attitudes toward time, as well as on the aggregation of multiple discount factors. we also offer a novel class of nonexpected utility preferences over gambles which satisfy invariance to background risk as well as betweenness, but are versatile enough to capture mixed risk attitudes.",
+        "doi": "",
+        "created": "2021-01-31",
+        "url": "https://arxiv.org/abs/2102.00618",
+        "authors": [
+            "xiaosheng mu",
+            "luciano pomatto",
+            "philipp strack",
+            "omer tamuz"
+        ]
+    },
+    {
+        "id": "2107.14554",
+        "title": "international trade network: country centrality and covid-19 pandemic",
+        "abstract": "international trade is based on a set of complex relationships between different countries that can be modelled as an extremely dense network of interconnected agents. on the one hand, this network might favour the economic growth of countries, but on the other, it can also favour the diffusion of diseases, like the covid-19. in this paper, we study whether, and to what extent, the topology of the trade network can explain the rate of covid-19 diffusion and mortality across countries. we compute the countries' centrality measures and we apply the community detection methodology based on communicability distance. then, we use these measures as focal regressors in a negative binomial regression framework. in doing so, we also compare the effect of different measures of centrality. our results show that the number of infections and fatalities are larger in countries with a higher centrality in the global trade network.",
+        "doi": "10.1007/s41109-022-00452-4",
+        "created": "2021-07-30",
+        "url": "https://arxiv.org/abs/2107.14554",
+        "authors": [
+            "roberto antonietti",
+            "paolo falbo",
+            "fulvio fontini",
+            "rosanna grassi",
+            "giorgio rizzini"
+        ]
+    },
+    {
+        "id": "2201.12618",
+        "title": "the effect of the pandemic on complex socio-economic systems: community   detection induced by communicability",
+        "abstract": "the increasing complexity of interrelated systems has made the use of multiplex networks an important tool for explaining the nature of relations between elements in the system. in this paper, we aim at investigating various aspects of countries' behaviour during the coronavirus pandemic period. by means of a multiplex network we consider simultaneously stringency index values, covid-19 infections and international trade data, in order to detect clusters of countries that showed a similar reaction to the pandemic. we propose a new methodological approach based on the estrada communicability for identifying communities on a multiplex network, based on a two-step optimization. at first, we determine the optimal inter-layer intensity between levels by minimizing a distance function. hence, the optimal inter-layer intensity is used to detect communities on each layer. our findings show that the community detection on this multiplex network has greater information power than classical methods for single-layer networks. our approach better reveals clusters on each layer with respect to the application of the same approach on each single-layer. moreover, detected groups in the multiplex case benefit of a higher cohesion, leading to identifying on each layer a lower number of communities with respect to the ones obtained in the single-layer cases.",
+        "doi": "10.1007/s00500-023-09456-3",
+        "created": "2022-01-29",
+        "url": "https://arxiv.org/abs/2201.12618",
+        "authors": [
+            "gian paolo clemente",
+            "rosanna grassi",
+            "giorgio rizzini"
+        ]
+    },
+    {
+        "id": "2205.00684",
+        "title": "rational social distancing policy during epidemics with limited   healthcare capacity",
+        "abstract": "epidemics of infectious diseases posing a serious risk to human health have occurred throughout history. during recent epidemics there has been much debate about policy, including how and when to impose restrictions on behaviour. policymakers must balance a complex spectrum of objectives, suggesting a need for quantitative tools. whether health services might be `overwhelmed' has emerged as a key consideration. here we show how costly interventions, such as taxes or subsidies on behaviour, can be used to exactly align individuals' decision making with government preferences even when these are not aligned. in order to achieve this, we develop a nested optimisation algorithm of both the government intervention strategy and the resulting equilibrium behaviour of individuals. we focus on a situation in which the capacity of the healthcare system to treat patients is limited and identify conditions under which the disease dynamics respect the capacity limit. we find an extremely sharp drop in peak infections at a critical maximum infection cost in the government's objective function. this is in marked contrast to the gradual reduction of infections if individuals make decisions without government intervention. we find optimal interventions vary less strongly in time when interventions are costly to the government and that the critical cost of the policy switch depends on how costly interventions are.",
+        "doi": "10.1371/journal.pcbi.1011533",
+        "created": "2022-05-02",
+        "url": "https://arxiv.org/abs/2205.00684",
+        "authors": [
+            "simon k. schnyder",
+            "john j. molina",
+            "ryoichi yamamoto",
+            "matthew s. turner"
+        ]
+    },
+    {
+        "id": "2205.06572",
+        "title": "dynamic stochastic inventory management in e-grocery retailing",
+        "abstract": "e-grocery retailing enables ordering products online to be delivered at a future time slot chosen by the customer. this emerging field of business provides retailers with large and comprehensive new data sets, yet creates several challenges for the inventory management process. for example, the risk of a single item's stock-out leading to a complete cancellation of the shopping process is higher in e-grocery than in traditional store retailing. as a consequence, retailers aim at very high service level targets to provide satisfactory customer service and to ensure long-term business growth. when determining replenishment order quantities, it is of crucial importance to precisely account for the full uncertainty in the inventory process. this requires predictive and prescriptive analytics to (1) estimate suitable underlying probability distributions to represent the uncertainty caused by non-stationary customer demand, shelf lives, and supply, and to (2) integrate those forecasts into a comprehensive multi-period optimisation framework. in this paper, we model this stochastic dynamic problem by a sequential decision process that allows us to avoid simplifying assumptions commonly made in the literature, such as the focus on a single demand period. as the resulting problem will typically be analytically intractable, we propose a stochastic lookahead policy incorporating monte carlo techniques to fully propagate the associated uncertainties in order to derive replenishment order quantities. this policy naturally integrates probabilistic forecasts and allows us to explicitly derive the value of accounting for probabilistic information compared to myopic or deterministic approaches in a simulation-based setting. in addition, we evaluate our policy in a case study based on real-world data where underlying probability distributions are estimated from historical data and explanatory variables.",
+        "doi": "",
+        "created": "2022-05-13",
+        "url": "https://arxiv.org/abs/2205.06572",
+        "authors": [
+            "david winkelmann",
+            "matthias ulrich",
+            "michael r\u00f6mer",
+            "roland langrock",
+            "hermann jahnke"
+        ]
+    },
+    {
+        "id": "2206.10330",
+        "title": "on finding the community with maximum persistence probability",
+        "abstract": "the persistence probability is a statistical index that has been proposed to detect one or more communities embedded in a network. even though its definition is straightforward, e.g, the probability that a random walker remains in a group of nodes, it has been seldom applied possibly for the difficulty of developing an efficient algorithm to calculate it. here, we propose a new mathematical programming model to find the community with the largest persistence probability. the model is integer fractional programming, but it can be reduced to mixed-integer linear programming with an appropriate variable substitution. nevertheless, the problem can be solved in a reasonable time for networks of small size only, therefore we developed some heuristic procedures to approximate the optimal solution. first, we elaborated a randomized greedy-ascent method, taking advantage of a peculiar data structure to generate feasible solutions fast. after analyzing the greedy output and determining where the optimal solution is eventually located, we implemented improving procedures based on a local exchange, but applying different long term diversification principles, that are based on variable neighborhood search and random restart. next, we applied the algorithms on simulated graphs that reproduce accurately the clustering characteristics found in real networks to determine the reliability and the effectiveness of our methodology. finally, we applied our method to two real networks, comparing our findings to what found by two well-known alternative community detection procedures.",
+        "doi": "10.1007/s10288-023-00559-z",
+        "created": "2022-06-17",
+        "url": "https://arxiv.org/abs/2206.10330",
+        "authors": [
+            "alessandro avellone",
+            "stefano benati",
+            "rosanna grassi",
+            "giorgio rizzini"
+        ]
+    },
+    {
+        "id": "2212.11585",
+        "title": "strategic energy flows in input-output relations: a temporal multilayer   approach",
+        "abstract": "the energy consumption, the transfer of resources through the international trade, the transition towards renewable energies and the environmental sustainability appear as key drivers in order to evaluate the resilience of the energy systems. concerning the consumptions, in the literature a great attention has been paid to direct energy, but the production of goods and services also involves indirect energy. hence, in this work we consider different types of embodied energy sources and the time evolution of the sectors' and countries' interactions. flows are indeed used to construct a directed and weighted temporal multilayer network based respectively on renewable and non-renewable sources, where sectors are nodes and layers are countries. we provide a methodological approach for analysing the network reliability and resilience and for identifying critical sectors and economies in the system by applying the multi-dimensional hits algorithm. then, we evaluate central arcs in the network at each time period by proposing a novel topological indicator based on the maximum flow problem. in this way, we provide a full view of economies, sectors and connections that play a relevant role over time in the network and whose removal could heavily affect the stability of the system. we provide a numerical analysis based on the embodied energy flows among countries and sectors in the period from 1990 to 2016. results prove that the methods are effective in catching the different patterns between renewable and non-renewable energy sources.",
+        "doi": "10.1002/asmb.2783",
+        "created": "2022-12-22",
+        "url": "https://arxiv.org/abs/2212.11585",
+        "authors": [
+            "gian paolo clemente",
+            "alessandra cornaro",
+            "rosanna grassi",
+            "giorgio rizzini"
+        ]
+    },
+    {
+        "id": "2303.16629",
+        "title": "power sector effects of alternative options for de-fossilizing   heavy-duty vehicles: go electric, and charge smartly",
+        "abstract": "in the passenger car segment, battery-electric vehicles (bev) have emerged as the most promising option to de-fossilize transportation. for heavy-duty vehicles (hdv), the technology space still appears to be more open. aside from bev, electric road systems (ers) for dynamic power transfer are discussed, as well as indirect electrification with trucks that use hydrogen fuel cells or e-fuels. here we investigate the power sector implications of these alternative options. we apply an open-source capacity expansion model to future scenarios of germany with high renewable energy shares, drawing on detailed route-based truck traffic data. results show that power sector costs are lowest for flexibly charged bev that also carry out vehicle-to-grid operations, and highest for hdv using e-fuels. if bev and ers-bev are not charged in an optimized way, power sector costs increase, but are still substantially lower than in scenarios with hydrogen or e-fuels. this is a consequence of the poor energy efficiency of indirect hdv electrification, which outweighs its temporal flexibility benefits. we further find a higher use of solar photovoltaic energy for bev and ers-bev, while hydrogen and e-fuel hdv lead to a higher use of wind power and fossil electricity generation. results are qualitatively robust in sensitivity analyses without the european interconnection or with capacity limits for wind power expansion.",
+        "doi": "",
+        "created": "2023-03-29",
+        "url": "https://arxiv.org/abs/2303.16629",
+        "authors": [
+            "carlos gaete-morales",
+            "julius j\u00f6hrens",
+            "florian heining",
+            "wolf-peter schill"
+        ]
+    },
+    {
+        "id": "2305.13618",
+        "title": "rational social distancing in epidemics with uncertain vaccination   timing",
+        "abstract": "during epidemics people may reduce their social and economic activity to lower their risk of infection. such social distancing strategies will depend on information about the course of the epidemic but also on when they expect the epidemic to end, for instance due to vaccination. typically it is difficult to make optimal decisions, because the available information is incomplete and uncertain. here, we show how optimal decision-making depends on information about vaccination timing in a differential game in which individual decision-making gives rise to nash equilibria, and the arrival of the vaccine is described by a probability distribution. we predict stronger social distancing the earlier the vaccination is expected and also the more sharply peaked its probability distribution. in particular, equilibrium social distancing only meaningfully deviates from the no-vaccination equilibrium course if the vaccine is expected to arrive before the epidemic would have run its course. we demonstrate how the probability distribution of the vaccination time acts as a generalised form of discounting, with the special case of an exponential vaccination time distribution directly corresponding to regular exponential discounting.",
+        "doi": "10.1371/journal.pone.0288963",
+        "created": "2023-05-22",
+        "url": "https://arxiv.org/abs/2305.13618",
+        "authors": [
+            "simon k. schnyder",
+            "john j. molina",
+            "ryoichi yamamoto",
+            "matthew s. turner"
+        ]
+    },
+    {
+        "id": "2306.05568",
+        "title": "maximally machine-learnable portfolios",
+        "abstract": "when it comes to stock returns, any form of predictability can bolster risk-adjusted profitability. we develop a collaborative machine learning algorithm that optimizes portfolio weights so that the resulting synthetic security is maximally predictable. precisely, we introduce mace, a multivariate extension of alternating conditional expectations that achieves the aforementioned goal by wielding a random forest on one side of the equation, and a constrained ridge regression on the other. there are two key improvements with respect to lo and mackinlay's original maximally predictable portfolio approach. first, it accommodates for any (nonlinear) forecasting algorithm and predictor set. second, it handles large portfolios. we conduct exercises at the daily and monthly frequency and report significant increases in predictability and profitability using very little conditioning information. interestingly, predictability is found in bad as well as good times, and mace successfully navigates the debacle of 2022.",
+        "doi": "",
+        "created": "2023-06-08",
+        "url": "https://arxiv.org/abs/2306.05568",
+        "authors": [
+            "philippe goulet coulombe",
+            "maximilian goebel"
+        ]
+    },
+    {
+        "id": "2310.17496",
+        "title": "tackling interference induced by data training loops in a/b tests: a   weighted training approach",
+        "abstract": "in modern recommendation systems, the standard pipeline involves training machine learning models on historical data to predict user behaviors and improve recommendations continuously. however, these data training loops can introduce interference in a/b tests, where data generated by control and treatment algorithms, potentially with different distributions, are combined. to address these challenges, we introduce a novel approach called weighted training. this approach entails training a model to predict the probability of each data point appearing in either the treatment or control data and subsequently applying weighted losses during model training. we demonstrate that this approach achieves the least variance among all estimators that do not cause shifts in the training distributions. through simulation studies, we demonstrate the lower bias and variance of our approach compared to other methods.",
+        "doi": "",
+        "created": "2023-10-26",
+        "url": "https://arxiv.org/abs/2310.17496",
+        "authors": [
+            "nian si"
+        ]
+    },
+    {
+        "id": "2403.07236",
+        "title": "partial identification of individual-level parameters using aggregate   data in a nonparametric binary outcome model",
+        "abstract": "it is well known that the relationship between variables at the individual level can be different from the relationship between those same variables aggregated over individuals. this problem of aggregation becomes relevant when the researcher wants to learn individual-level relationships but only has access to data that has been aggregated. in this paper, i develop a methodology to partially identify linear combinations of conditional average outcomes from aggregate data when the outcome of interest is binary while imposing very few restrictions on the underlying data generating process. i construct identified sets using an optimization program that allows for researchers to impose additional shape and data restrictions. i also provide consistency results and construct an inference procedure that is valid with aggregate data, which only provides marginal information about each variable. i apply the methodology to simulated and real-world data sets and find that the estimated identified sets are too wide to be useful, but become narrower as more assumptions are imposed and data aggregated at a finer level is available. this suggests that to obtain useful information from aggregate data sets about individual-level relationships, researchers must impose further assumptions that are carefully justified or seek out data aggregated at the finest level possible.",
+        "doi": "",
+        "created": "2024-03-11",
+        "url": "https://arxiv.org/abs/2403.07236",
+        "authors": [
+            "sarah moon"
+        ]
+    },
+    {
+        "id": "2404.03737",
+        "title": "forecasting with neuro-dynamic programming",
+        "abstract": "economic forecasting is concerned with the estimation of some variable like gross domestic product (gdp) in the next period given a set of variables that describes the current situation or state of the economy, including industrial production, retail trade turnover or economic confidence. neuro-dynamic programming (ndp) provides tools to deal with forecasting and other sequential problems with such high-dimensional states spaces. whereas conventional forecasting methods penalises the difference (or loss) between predicted and actual outcomes, ndp favours the difference between temporally successive predictions, following an interactive and trial-and-error approach. past data provides a guidance to train the models, but in a different way from ordinary least squares (ols) and other supervised learning methods, signalling the adjustment costs between sequential states. we found that it is possible to train a gdp forecasting model with data concerned with other countries that performs better than models trained with past data from the tested country (portugal). in addition, we found that non-linear architectures to approximate the value function of a sequential problem, namely, neural networks can perform better than a simple linear architecture, lowering the out-of-sample mean absolute forecast error (mae) by 32% from an ols model.",
+        "doi": "",
+        "created": "2024-04-04",
+        "url": "https://arxiv.org/abs/2404.03737",
+        "authors": [
+            "pedro afonso fernandes"
+        ]
+    },
+    {
+        "id": "2404.03794",
+        "title": "effect of state and local sexual orientation anti-discrimination laws on   labor market differentials",
+        "abstract": "this paper presents the first quasi-experimental research examining the effect of both local and state anti-discrimination laws on sexual orientation on the labor supply and wages of lesbian, gay, and bisexual (lgb) workers. to do so, we use the american community survey data on household composition to infer sexual orientation and combine this with a unique panel dataset on local anti-discrimination laws. using variation in law implementation across localities over time and between same-sex and different-sex couples, we find that anti-discrimination laws significantly reduce gaps in labor force participation rate, employment, and the wage gap for gay men relative to straight men. these laws also significantly reduce the labor force participation rate, employment, and wage premium for lesbian women relative to straight women. one explanation for the reduced labor supply and wage premium is that lesbian couples begin to have more children in response to the laws. finally, we present evidence that state anti-discrimination laws significantly and persistently increased support for same-sex marriage. this research shows that anti-discrimination laws can be an effective policy tool for reducing labor market inequalities across sexual orientation and improving sentiment toward lgb americans.",
+        "doi": "",
+        "created": "2024-04-04",
+        "url": "https://arxiv.org/abs/2404.03794",
+        "authors": [
+            "scott delhommer",
+            "domonkos f. vamossy"
+        ]
+    },
+    {
+        "id": "2404.03989",
+        "title": "instruments and effects of monetary and fiscal policy: the relationship   between inflation, vat, and deposit interest rate",
+        "abstract": "in this study, we aimed to examine the effect of vat revenues and deposit interest rates on inflation in turkey between 1985-2022. within the framework of econometric analysis of the obtained data, the analysis was carried out using adf unit root test, johansen co-integration test, error terms and vecm (vector error correction model) models. according to the analysis results, it was understood that the data were stationary at the i(i) level, it was determined that there was a cointegrated relationship between them in the long term, and by estimating the error term, causality findings were determined within the framework of vecm analysis. according to the causality results of the wald test; causality is found from deposit interest rate to vat and inflation, and from inflation to vat and deposit interest rate (bidirectional), while causality is also found from vat to inflation and deposit interest rates.",
+        "doi": "",
+        "created": "2024-04-05",
+        "url": "https://arxiv.org/abs/2404.03989",
+        "authors": [
+            "ali dogdu",
+            "murad kayacan"
+        ]
+    },
+    {
+        "id": "2404.04097",
+        "title": "subscription-based inventory planning for e-grocery retailing",
+        "abstract": "the growing e-grocery sector faces challenges in becoming profitable due to heightened customer expectations and logistical complexities. this paper addresses the impact of uncertainty in customer demand on inventory planning for online grocery retailers. given the perishable nature of grocery products and intense market competition, retailers must ensure product availability while minimising overstocking costs. we propose introducing subscription offers as a solution to mitigate these inventory challenges. unlike existing literature focusing on uniform subscription models that may harm profitability, our approach considers the synergy between implementing product subscriptions and cost savings from improved inventory planning. we present a three-step procedure enabling retailers to understand uncertainty costs, quantify the value of gathering additional planning information, and implement profitability-enhancing subscription offers. this holistic approach ensures the development of sustainable subscription models in the e-grocery domain.",
+        "doi": "",
+        "created": "2024-04-05",
+        "url": "https://arxiv.org/abs/2404.04097",
+        "authors": [
+            "david winkelmann",
+            "charlotte k\u00f6hler"
+        ]
+    },
+    {
+        "id": "2404.04105",
+        "title": "judgment in macroeconomic output growth predictions: efficiency,   accuracy and persistence",
+        "abstract": "the present study applies observations of individual predictions of the first three releases of the us output growth rate to evaluate how the applied judgment affects prediction efficiency and accuracy as well as if judgment is persistent. while the first two issues have been assessed in other studies, there is little evidence on the formation of judgment in macroeconomic projections. most of the forecasters produce unbiased predictions, but employing the median bloomberg projection as baseline, it turns out that judgment generally does not improve accuracy. there seems to be persistence in the judgment applied by forecasters in the sense that the sign of the adjustment in the first release prediction carries over to the projections of the two following revisions. one possible explanation is that forecasters use some kind of anchor-and-adjustment heuristic.",
+        "doi": "",
+        "created": "2024-04-05",
+        "url": "https://arxiv.org/abs/2404.04105",
+        "authors": [
+            "michael pedersen"
+        ]
+    },
+    {
+        "id": "2404.04121",
+        "title": "productivity and quality-adjusted life years: qalys, palys and beyond",
+        "abstract": "we develop a unified framework for the measurement and valuation of health and productivity. within this framework, we characterize evaluation functions allowing for compromises between the classical quality-adjusted life years (qalys) and its polar productivity-adjusted life years (palys). our framework and characterization results provide a new normative basis for the economic evaluation of health care interventions, as well as occupational health and safety policies, aimed to impact both health and productivity of individuals.",
+        "doi": "",
+        "created": "2024-04-05",
+        "url": "https://arxiv.org/abs/2404.04121",
+        "authors": [
+            "kristian s. hansen",
+            "juan d. moreno-ternero",
+            "lars p. \u00f8sterdal"
+        ]
+    }
+]

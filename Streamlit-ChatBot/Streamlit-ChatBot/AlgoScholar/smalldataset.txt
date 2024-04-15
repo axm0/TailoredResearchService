@@ -1,0 +1,42 @@
+root
+    0
+        id: "1801.04064"
+        title: "state variation mining: on information divergence with message importance in big data"
+        abstract: "information transfer which reveals the state variation of variables usually plays a vital role in big data analytics and processing. in fact, the measures for          nformation transfer could reflect the system change by use of the variable distributions, similar to kl divergence and renyi divergence. furthermore, in terms of the information transfer in big data, small probability events usually dominate the importance of the total message to some degree. therefore, it is significant to design an information transfer measure based on the message importance which emphasizes the small probability events. in this paper, we propose a message importance transfer measure (mitm) and investigate its characteristics and applications on three aspects. first, the message importance transfer capacity based on mitm is presented to offer an upper bound for the information transfer process with disturbance. then, we extend the mitm to the continuous case and discuss the robustness by using it to measuring information distance. finally, we utilize the mitm to guide the queue length selection in the caching operation of mobile edge computing."
+        doi: "10.1109/glocom.2018.8647882"
+        created: "2018-01-12"
+        url: "https://arxiv.org/abs/1801.04064"
+        authors
+            0: "rui she"
+            1: "shanyun liu"
+            2: "pingyi fan"
+    1
+        id: "1808.02933"
+        title: "sequential monte carlo bandits"
+        abstract: "we extend bayesian multi-armed bandit (mab) algorithms beyond their original setting by making use of sequential monte carlo (smc) methods. a mab is a sequential decision making problem where the goal is to learn a policy that maximizes long term payoff, where only the reward of the executed action is observed. in the stochastic mab, the reward for each action is generated from an unknown distribution, often assumed to be stationary. to decide which action to take next, a mab agent must learn the characteristics of the unknown reward distribution, e.g., compute its sufficient statistics. however, closed-form expressions for these statistics are analytically intractable except for simple, stationary cases. we here utilize smc for estimation of the statistics bayesian mab agents compute, and devise flexible policies that can address a rich class of bandit problems: i.e., mabs with nonlinear, stateless- and context-dependent reward distributions that evolve over time. we showcase how non-stationary bandits, where time dynamics are modeled via linear dynamical systems, can be successfully addressed by smc-based bayesian bandit agents. we empirically demonstrate good regret performance of the proposed smc-based bandit policies in several mab scenarios that have remained elusive, i.e., in non-stationary bandits with nonlinear rewards."
+        doi: ""
+        created: "2018-08-08"
+        url: "https://arxiv.org/abs/1808.02933"
+        authors
+            0: "iñigo urteaga"
+            1: "chris h. wiggins"
+    2
+        id: "1907.01136"
+        title: "finding outliers in gaussian model-based clustering"
+        abstract: "clustering, or unsupervised classification, is a task often plagued by outliers. yet there is a paucity of work on handling outliers in clustering. outlier identification algorithms tend to fall into three broad categories: outlier inclusion, outlier trimming, and \textit{post hoc} outlier identification methods, with the former two often requiring pre-specification of the number of outliers. the fact that sample mahalanobis distance is beta-distributed is used to derive an approximate distribution for the log-likelihoods of subset finite gaussian mixture models. an algorithm is then proposed that removes the least plausible points according to the subset log-likelihoods, which are deemed outliers, until the subset log-likelihoods adhere to the reference distribution. this results in a trimming method, called oclust, that inherently estimates the number of outliers."
+        doi: ""
+        created: "2019-07-01"
+        url: "https://arxiv.org/abs/1907.01136"
+        authors
+            0: "katharine m. clark"
+            1: "paul d. mcnicholas"
+
+
+
+
+
+
+
+
+
+
