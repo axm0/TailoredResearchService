@@ -42,11 +42,12 @@ def scrape_ai(start_date, end_date, max_limit, categories):
             with open(file_path, 'r') as file:
                 existing_data = json.load(file)
                 for entry in existing_data:
-                    entry['category'] = category
-                    category_arxiv_ids[entry['id']] = category
-        print(f"Initializing Scraper for category: {category}")
+                    arxiv_id = entry['id']
+                    if arxiv_id not in all_arxiv_ids:
+                        all_arxiv_ids[arxiv_id] = [category]
+                    else:
+                        all_arxiv_ids[arxiv_id].append(category)
         scraper = Scraper(category=category, date_from=start_date, date_until=end_date, max_records=max_limit)
-        print(f"Scraping data for category: {category}")
         output = scraper.scrape()
         cols = ('id', 'title', 'abstract', 'doi', 'created', 'url', 'category')
         df = pd.DataFrame(output, columns=cols)
@@ -66,7 +67,6 @@ def scrape_ai(start_date, end_date, max_limit, categories):
         all_arxiv_ids[category] = category_arxiv_ids
     return all_arxiv_ids
 
-
 def get_reference_details(paper_id):
     url = f"https://api.semanticscholar.org/graph/v1/paper/{paper_id}?fields=title,abstract,externalIds"
     try:
@@ -85,50 +85,43 @@ def fetch_paper_details(all_arxiv_ids, output_file):
     merged_data = {}
     encountered_ids = set()
 
-    for category, arxiv_ids in all_arxiv_ids.items():
-        for arxiv_id in arxiv_ids:
-            if arxiv_id not in encountered_ids:
-                response = requests.get(f"https://api.semanticscholar.org/graph/v1/paper/arXiv:{arxiv_id}?fields=paperId,title,abstract,references")
-                if response.status_code == 200:
-                    paper_data = response.json()
-                    paper_id = paper_data.get("paperId")
-                    if paper_id:
-                        merged_data[paper_id] = {
-                            "arxivId": arxiv_id,
-                            "category": category,
-                            "title": paper_data.get("title"),
-                            "abstract": paper_data.get("abstract"),
-                            "references": paper_data.get("references"),
-                        }
-                        encountered_ids.add(arxiv_id)
+    for arxiv_id, categories in all_arxiv_ids.items():
+        if arxiv_id not in encountered_ids:
+            response = requests.get(f"https://api.semanticscholar.org/graph/v1/paper/arXiv:{arxiv_id}?fields=paperId,title,abstract,references")
+            if response.status_code == 200:
+                paper_data = response.json()
+                paper_id = paper_data.get("paperId")
+                if paper_id:
+                    merged_data[paper_id] = {
+                        "arxivId": arxiv_id,
+                        "categories": categories,
+                        "title": paper_data.get("title"),
+                        "abstract": paper_data.get("abstract"),
+                        "references": paper_data.get("references"),
+                    }
+                    encountered_ids.add(arxiv_id)
 
+    unique_references = {}
     for paper in merged_data.values():
         filtered_references = []
-        references = paper.get("references", [])
-        for reference in references:
-            paper_id = reference.get("paperId")
-            if paper_id and paper_id not in encountered_ids:
-                title, abstract, external_ids = get_reference_details(paper_id)
-                if external_ids and "ArXiv" in external_ids:
-                    filtered_reference = {
-                        "arxivId": external_ids["ArXiv"],
-                        "title": title,
-                        "abstract": abstract
-                    }
-                    filtered_references.append(filtered_reference)
-                encountered_ids.add(paper_id)
+        for reference in paper["references"]:
+            if "arxivId" in reference:
+                arxiv_id = reference["arxivId"]
+                if arxiv_id not in unique_references:
+                    unique_references[arxiv_id] = reference
+                    filtered_references.append(reference)
         paper["references"] = filtered_references
 
-    with open(output_file, 'w') as file:
-        json.dump(list(merged_data.values()), file, indent=2)
+        with open(output_file, 'w') as file:
+            json.dump(list(merged_data.values()), file, indent=2)
 
-    print(f"Paper details have been written to {output_file}.")
+        print(f"Paper details have been written to {output_file}.")
 
 start_date = '2024-04-17'
 end_date = '2024-04-17'
-max_limit = 100
-categories = ['cs', 'econ', 'stat']
+max_limit = 5
+categories = ['cs']
 output_file = 'ARXIV/merged_data_with_references.json'
 
 all_arxiv_ids = scrape_ai(start_date, end_date, max_limit, categories)
-fetch_paper_details(all_arxiv_ids, output_file) 
+fetch_paper_details(all_arxiv_ids, output_file)
