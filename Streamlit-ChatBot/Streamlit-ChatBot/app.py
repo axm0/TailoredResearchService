@@ -2,6 +2,8 @@ import streamlit as st
 from datetime import datetime
 from dateutil.relativedelta import *
 from AlgoScholar.AlgoScholar_v2 import algoscholar_chat1, load_documents
+from pyvis import network as net
+from IPython.display import display, HTML
 
 # Define Constants
 MAX_CHAT_SESSIONS = 5

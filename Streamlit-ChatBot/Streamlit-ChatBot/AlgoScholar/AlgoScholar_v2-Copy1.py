@@ -43,7 +43,7 @@ def ss_search(documents, user_query):
 
 # decalre json path & run function with json path
 def load_documents(start_date, end_date):
-    json_path = "./AlgoScholar/ARXIV/merged.json"
+    json_path = "./AlgoScholar/ARXIV/merged_data_with_references.json"
     documents = load_data(json_path=json_path)
     return documents
 
