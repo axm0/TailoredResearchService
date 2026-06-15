@@ -1,6 +1,6 @@
 # AlgoScholar
 
-AlgoScholar is an advanced research assistant chatbot powered by the Claude Haiku model. It streamlines academic research workflows by enabling users to quickly search through ARXIV's extensive archive of academic papers in seconds. The project was developed and deployed on AWS SageMaker.
+AlgoScholar is a model-agnostic Streamlit research assistant for arXiv papers built with AWS SageMaker and AWS Bedrock. It streamlines academic research workflows with semantic retrieval, multi-session chat, date/topic filters, and response ratings.
 
 ## What is AlgoScholar?
 
@@ -26,7 +26,7 @@ Users can filter papers by date ranges, engage in natural language conversations
 
 ## Development Environment
 
-This project was developed and deployed using **AWS SageMaker**, leveraging its machine learning capabilities and scalable infrastructure for efficient processing of research papers and model training.
+This project was developed and deployed with **AWS SageMaker** and uses **AWS Bedrock** for LLM access, paired with local semantic retrieval over arXiv JSON data for efficient research-paper exploration.
 
 ## Technical Implementation
 
@@ -36,7 +36,9 @@ AlgoScholar is built with a modern tech stack that enables efficient natural lan
 
 - **Frontend**: Streamlit web application for interactive user interface
 - **Backend**: Python backend for processing requests and managing chat sessions
-- **AI Model**: Claude Haiku model for natural language understanding and generation
+- **Development/Deployment**: AWS SageMaker
+- **LLM Platform**: AWS Bedrock, with a model-agnostic application layer
+- **Retrieval**: FAISS with SentenceTransformer embeddings
 - **Data Source**: ARXIV papers database organized by academic domains
 - **Visualization**: PyVis network for generating visual maps of paper relationships
 
@@ -54,8 +56,8 @@ To install AlgoScholar, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/algoscholar.git
-   cd algoscholar
+   git clone https://github.com/axm0/TailoredResearchService.git
+   cd TailoredResearchService
    ```
 
 ## Initialization
@@ -63,6 +65,7 @@ To install AlgoScholar, follow these steps:
 1. Install dependencies:
    ```sh
    pip install --no-cache-dir -r requirements.txt
+   pip install langchain langchain-community jq faiss-cpu sentence-transformers chromadb
    ```
 2. Setup the environment:
    ```sh
